@@ -7,7 +7,7 @@ env:
     IMAGE_TAG: latest
     ACCOUNT_ID: 420711464341
     ACCOUNT_URI: 420711464341.dkr.ecr.ap-south-1.amazonaws.com
-    ECS_CLUSTER: java-cluster
+    ECS_CLUSTER: gentle-elephant-csoc3h
     ECS_SERVICE: java-task-service-n1aci5p7
 
 phases:
