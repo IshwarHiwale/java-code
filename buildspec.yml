@@ -6,8 +6,15 @@ env:
     IMAGE_REPO_NAME: java-code
     IMAGE_TAG: latest
     ACCOUNT_ID: 420711464341
+    ACCOUNT_URI: 420711464341.dkr.ecr.ap-south-1.amazonaws.com
 
 phases:
+
+  pre_build:
+    commands:
+      - echo "Logging into Amazon ECR..."
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $ACCOUNT_URI
+      
   build:
     commands:
       - echo "Build started on $(date)"
